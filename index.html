@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello World!</title>
+    <title>Electron Notes</title>
+    <style>
+      #notes-container {
+        position: relative;
+        width: 80%;
+        height: 400px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+      }
+
+      .note {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        cursor: move;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
+    <h1>Electron Notes</h1>
+    <form id="note-form">
+      <label for="note-text">Enter a note:</label>
+      <input type="text" id="note-text" name="note-text" />
+      <input id="add-note-button" value="add note" type="submit"></input>
+    </form>
+    <div id="notes-container">
+      <!-- Notes will be added here -->
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
