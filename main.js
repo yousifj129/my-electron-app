@@ -7,7 +7,8 @@ const createWindow = () => {
         height: 600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        title: "Electron Notes"
     })
     mainWindow.loadFile('index.html')
 }
